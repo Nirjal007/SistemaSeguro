@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturer Dashboard</title>
+    <!-- Bootstrap CSS for easy layout and responsiveness -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icons for the buttons -->
+    <link rel="stylesheet" href="main.css"> <!-- Custom CSS -->
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 sidebar bg-dark text-white p-4">
+                <h3 class="text-center">Manufacturer Dashboard</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#view-orders">View Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#upload-product">Upload Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#manage-inventory">Manage Inventory</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 p-4">
+                <!-- View Orders Section -->
+                <section id="view-orders" class="mb-5">
+                    <h4 class="text-primary">View Orders</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Retailer Name</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table">
+                            <!-- Dynamic rows for orders will appear here -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Upload Product Section -->
+                <section id="upload-product" class="mb-5">
+                    <h4 class="text-primary">Upload New Product</h4>
+                    <form id="upload-product-form">
+                        <div class="form-group">
+                            <label for="product-name">Product Name</label>
+                            <input type="text" class="form-control" id="product-name" placeholder="Enter product name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-description">Product Description</label>
+                            <textarea class="form-control" id="product-description" rows="4" placeholder="Enter product description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-image">Product Image</label>
+                            <input type="file" class="form-control" id="product-image" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Upload Product</button>
+                    </form>
+                </section>
+
+                <!-- Manage Inventory Section -->
+                <section id="manage-inventory" class="mb-5">
+                    <h4 class="text-primary">Manage Inventory</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table">
+                            <!-- Dynamic rows for inventory will appear here -->
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script> <!-- Custom JavaScript -->
+</body>
+</html>

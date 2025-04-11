@@ -1,0 +1,46 @@
+<!-- retailer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retailer Dashboard</title>
+    <link rel="stylesheet" href="retailer.css">
+
+</head>
+<body>
+    <h2>Welcome, Retailer</h2>
+    <h3>Place a Purchase Order</h3>
+    <form id="order-form">
+        <label for="product">Product Name:</label>
+        <input type="text" id="product" required>
+
+        <label for="material">Product Material:</label>
+        <input type="text" id="material" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <!-- Retailer Email -->
+        <label for="retailer-email">Your Email:</label>
+        <input type="email" id="retailer-email" required placeholder="Enter your email address">
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <h3>Your Order Status</h3>
+    <table id="order-status">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="order-table"></tbody>
+    </table>
+
+    <script src="retailer.js"></script>
+</body>
+</html>
