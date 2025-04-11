@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role-Based Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script defer src="login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema Seguro</h1>
+        <form id="loginForm" method="POST" action="">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            </div>
+            <div class="input-group">
+                <label for="role">Select Role:</label>
+                <select id="role" name="role" required>
+                    <option value="Admin">Admin</option>
+                    <option value="Supplier">Supplier</option>
+                    <option value="Manufacturer">Manufacturer</option>
+                    <option value="Distributor">Distributor</option>
+                    <option value="Retailer">Retailer</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="companyName">Company Name (If applicable):</label>
+                <input type="text" id="companyName" name="companyName" placeholder="Enter your Company Name">
+            </div>
+            <div class="input-group">
+                <label for="storeName">Store Name (If applicable):</label>
+                <input type="text" id="storeName" name="storeName" placeholder="Enter your Store Name">
+            </div>
+            <div class="input-group">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" name="contactNumber" placeholder="Enter your Contact Number" required>
+            </div>
+
+            <!-- Enable 2FA Button -->
+            <div class="input-group">
+                <label for="enable2FA">Enable Two-Factor Authentication (2FA):</label>
+                <button type="button" id="enable2FA">Enable 2FA</button>
+            </div>
+
+            <!-- 2FA Code Input Field (Initially Hidden) -->
+            <div class="input-group" id="2faInput" style="display: none;">
+                <label for="twoFACode">Enter 2FA Code:</label>
+                <input type="text" id="twoFACode" name="twoFACode" placeholder="Enter 6-digit 2FA Code">
+            </div>
+
+            <button type="submit">Login</button>
+
+            <div id="googleSignIn">
+                <p>Or login with Google:</p>
+                <a href="/google-login" class="google-btn">Sign in with Google</a>
+            </div>
+
+            <div class="links">
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                <p><a href="forgot-password.html">Forgot Password?</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Enable 2FA Button Functionality
+        document.getElementById("enable2FA").addEventListener("click", function() {
+            document.getElementById("2faInput").style.display = "block";
+            alert("2FA enabled! Please enter the 6-digit code");
+        });
+    </script>
+</body>
+</html>

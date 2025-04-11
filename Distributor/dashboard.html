@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributor Dashboard</title>
+    <!-- Bootstrap CSS for easy layout and responsiveness -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icons for the buttons -->
+    <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 sidebar bg-dark text-white p-4">
+                <h3 class="text-center">Distributor Dashboard</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#view-orders">View Retailer Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#manage-shipments">Manage Shipments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#track-deliveries">Track Deliveries</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 p-4">
+                <!-- View Retailer Orders Section -->
+                <section id="view-orders" class="mb-5">
+                    <h4 class="text-primary">View Retailer Orders</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Retailer Name</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table">
+                            <!-- Dynamic rows for retailer orders will appear here -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Manage Shipments Section -->
+                <section id="manage-shipments" class="mb-5">
+                    <h4 class="text-primary">Manage Shipments</h4>
+                    <form id="shipment-form">
+                        <div class="form-group">
+                            <label for="order-id">Order ID</label>
+                            <input type="text" class="form-control" id="order-id" placeholder="Enter Order ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipment-status">Shipment Status</label>
+                            <select class="form-control" id="shipment-status" required>
+                                <option value="Pending">Pending</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Delivered">Delivered</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Update Shipment</button>
+                    </form>
+                </section>
+
+                <!-- Track Deliveries Section -->
+                <section id="track-deliveries" class="mb-5">
+                    <h4 class="text-primary">Track Deliveries</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Retailer Name</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Delivery Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="delivery-tracking-table">
+                            <!-- Dynamic rows for delivery tracking will appear here -->
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- JS and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script> <!-- Custom JavaScript -->
+</body>
+</html>
